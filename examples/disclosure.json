@@ -1,0 +1,15 @@
+{
+  "spec_version": "0.1-draft",
+  "disclosure_id": "d3a7f9b1-2c4e-4d8a-a6f0-7e9b1c3d5f27",
+  "question_id": "0b8e5d2c-3f61-4a9e-b7d4-52c1e8f0a913",
+  "outcome": "answered",
+  "answer": { "type": "predicate", "value": true },
+  "answered_question": {
+    "attribute": "residence_permit.expiry_date",
+    "predicate": { "op": "gt", "operand": { "relative": "P6M" } }
+  },
+  "generalised": false,
+  "reference_date": "2026-11-09",
+  "valid_until": "2026-11-15",
+  "proofs": []
+}

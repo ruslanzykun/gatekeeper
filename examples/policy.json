@@ -1,0 +1,39 @@
+{
+  "spec_version": "0.1-draft",
+  "policy_id": "6f1c2a4e-8b3d-4f7a-9c2e-1d5b7a9e3c40",
+  "requester": {
+    "id": "example-job-assistant",
+    "binding": "mcp_oauth_client",
+    "display_name": "Example job application assistant"
+  },
+  "purpose": {
+    "id": "job-application",
+    "description": "Check whether my residence status allows me to apply for a job."
+  },
+  "rules": [
+    {
+      "attribute": "residence_permit.expiry_date",
+      "allowed_ops": ["gt"],
+      "allowed_operands": [
+        { "relative": "P3M" },
+        { "relative": "P6M" },
+        { "relative": "P12M" }
+      ],
+      "disclosure": "predicate",
+      "generalisation": { "date_granularity": "month" },
+      "reference_date_granularity": "week",
+      "budget": { "max_questions": 5, "period": "P30D" }
+    },
+    {
+      "attribute": "residence_permit.employment_allowed",
+      "allowed_ops": ["eq"],
+      "allowed_operands": [{ "value": true }],
+      "disclosure": "predicate",
+      "budget": { "max_questions": 3, "period": "P30D" }
+    }
+  ],
+  "global_limits": { "max_questions": 10, "period": "P30D" },
+  "granted_at": "2026-11-09T10:12:00Z",
+  "expires_at": "2027-02-09T10:12:00Z",
+  "consent": { "method": "dialog", "policy_text_version": "0.1-draft" }
+}
